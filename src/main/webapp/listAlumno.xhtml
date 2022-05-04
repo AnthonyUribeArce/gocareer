@@ -33,6 +33,9 @@
 						<f:convertDateTime pattern="dd-MM-yyyy" timeZone="UTC" />
 					</h:outputText>
 				</p:column>
+				<p:column headerText="Operacion">
+					<h:commandButton action="#{alumnoController.preUpdate(al)}" value="Modificar" />
+				</p:column>
 				<p:column>
 					<p:commandButton action="listAlumno" value="Eliminar"
 						actionListener="#{alumnoController.delete(al)}" update="@form">

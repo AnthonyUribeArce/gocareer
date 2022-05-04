@@ -9,4 +9,5 @@ public interface IEspecialistaDao {
 	public List<Especialista>list();
 	
 	public void delete(int idEspecialista);
+	public void update(Especialista es);
 }

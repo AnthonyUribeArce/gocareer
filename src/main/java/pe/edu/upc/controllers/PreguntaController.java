@@ -48,6 +48,17 @@ public class PreguntaController {
 			System.out.println("Error al listar en el controlador de pregunta");
 		}
 	}
+	public String preUpdate(Pregunta pre) {
+		this.setPre(pre);;
+		return "modificarPregunta.xhtml";
+	}
+	public void Update() {
+		try {
+			preService.update(this.pre);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de pregunta");
+		}
+	}
 	
 	public void delete(Pregunta pre) {
 		try {

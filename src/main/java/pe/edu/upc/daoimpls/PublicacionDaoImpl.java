@@ -48,5 +48,15 @@ public class PublicacionDaoImpl implements IPublicacionDao {
 			System.out.println("Error al eliminar publicacion en el dao");
 		}
 	}
+	@Transactional
+	@Override
+	public void update(Publicacion pub) {
+		try {
+			em.merge(pub);
+		} catch (Exception e) {
+			System.out.println("Error al modificar publicacion en el dao");
+		}
+		
+	}
 
 }

@@ -48,5 +48,14 @@ public class PreguntaDaoImpl implements IPreguntaDao {
 			System.out.println("Error al eliminar pregunta en el dao");
 		}
 	}
+	@Transactional
+	@Override
+	public void update(Pregunta pre) {
+		try {
+			em.merge(pre);
+		} catch (Exception e) {
+			System.out.println("Error al modificar pregunta en el dao");
+		}
+	}
 
 }

@@ -7,7 +7,7 @@
 
 <ui:composition template="master.xhtml">
 	<ui:define name="content">
-		<h2>Registrar preguntas</h2>
+		<h2>Modificar preguntas</h2>
 		<h:form>
 			<h:outputLabel value="Id" for="idpre" styleClass="control-label" />
 			<h:inputText value="#{preguntaController.pre.CPregunta}" id="idpre"
@@ -34,9 +34,9 @@
 				<br />
 			</p:selectOneMenu>
 			<br />
-			<p:commandButton value="Actualizar"
-				actionListener="#{preguntaController.Update()}"
-				action="listPregunta?faces-redirect=true" update="@form"></p:commandButton>
+			<p:commandButton value="Grabar"
+				actionListener="#{preguntaController.insert()}"
+				action="preguntas?faces-redirect=true" update="@form"></p:commandButton>
 		</h:form>
 	</ui:define>
 </ui:composition>

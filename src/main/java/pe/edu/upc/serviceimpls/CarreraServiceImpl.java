@@ -26,4 +26,16 @@ public class CarreraServiceImpl implements ICarreraService{
 		
 		return cDao.list();
 	}
+
+	@Override
+	public void delete(int idCarrera) {
+		cDao.delete(idCarrera);
+		
+	}
+
+	@Override
+	public void update(Carrera a) {
+		cDao.update(a);
+		
+	}
 }

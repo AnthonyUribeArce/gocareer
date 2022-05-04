@@ -48,5 +48,17 @@ public class EspecialistaDaoImpl implements IEspecialistaDao {
 			System.out.println("Error al eliminar especialista en el dao");
 		}
 	}
+	
+	@Transactional
+	@Override
+	public void update(Especialista es) {
+		try {
+			em.merge(es);
+		} catch (Exception e) {
+			System.out.println("Error al modificar especialista en el dao");
+		}
+		
+		
+	}
 
 }

@@ -29,4 +29,10 @@ public class EspecialistaServiceImpl implements IEspecialistaService {
 		eDao.delete(idEspecialista);
 	}
 
+	@Override
+	public void update(Especialista es) {
+		eDao.update(es);
+		
+	}
+
 }

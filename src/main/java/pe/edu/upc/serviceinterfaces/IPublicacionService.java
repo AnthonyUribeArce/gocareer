@@ -8,4 +8,5 @@ public interface IPublicacionService {
 	public void insert(Publicacion pub);
 	public List<Publicacion>list();
 	public void delete(int idPubli);
+	public void update(Publicacion pub);
 }

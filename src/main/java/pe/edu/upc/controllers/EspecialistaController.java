@@ -8,6 +8,7 @@ import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+
 import pe.edu.upc.entities.Especialista;
 import pe.edu.upc.serviceinterfaces.IEspecialistaService;
 
@@ -46,6 +47,17 @@ public class EspecialistaController {
 			listaEspecialista=eService.list();
 		} catch (Exception e) {
 			System.out.println("Error al listar en el controller de Especialista");
+		}
+	}
+	public String preUpdate(Especialista es) {
+		this.setE(es);
+		return "modificarEspecialista.xhtml";
+	}
+	public void Update() {
+		try {
+			eService.update(this.es);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de Alumno");
 		}
 	}
 	

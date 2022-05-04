@@ -71,6 +71,17 @@ public class ReunionController {
 			System.out.println("Error al eliminar en el controller de Reunion");
 		}
 	}
+	public String preUpdate(Reunion r) {
+		this.setR(r);
+		return "modificarReunion.xhtml";
+	}
+	public void Update() {
+		try {
+			rService.update(this.r);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de reunion");
+		}
+	}
 
 	public void listAlumnos() {
 		try {

@@ -39,4 +39,25 @@ public class CarreraDaoImpl implements ICarreraDao {
 		return listaCarrera;
 	}
 
+	@Transactional
+	@Override
+	public void delete(int idCarrera) {
+		try {
+			Carrera a = em.find(Carrera.class, idCarrera);
+			em.remove(a);
+		} catch (Exception e) {
+			System.out.println("Error al eliminar carrera en el dao");
+		}
+	}
+
+	@Transactional
+	@Override
+	public void update(Carrera a) {
+		try {
+			em.merge(a);
+		} catch (Exception e) {
+			System.out.println("Error al modificar carrera en el dao");
+		}
+	}
+
 }

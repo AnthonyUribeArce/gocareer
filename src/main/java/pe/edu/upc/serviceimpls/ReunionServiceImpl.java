@@ -31,4 +31,10 @@ public class ReunionServiceImpl implements IReunionService{
 		reDao.delete(idReunion);
 	}
 
+	@Override
+	public void update(Reunion a) {
+		reDao.update(a);
+		
+	}
+
 }

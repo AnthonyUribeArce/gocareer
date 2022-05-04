@@ -32,6 +32,9 @@
 				<p:column headerText="Especialista">
 					<h:outputText value="#{pub.especialista.NApellidosEspecialista}" />
 				</p:column>
+				<p:column headerText="Operacion">
+					<h:commandButton action="#{publicacionController.preUpdate(pub)}" value="Modificar" />
+				</p:column>
 
 				<p:column>
 					<p:commandButton action="listPublicacion" value="Eliminar"

@@ -30,4 +30,10 @@ public class PreguntaServiceImpl implements IPreguntaService{
 		preDao.delete(idPregunta);
 	}
 
+	@Override
+	public void update(Pregunta pre) {
+		preDao.update(pre);
+		
+	}
+
 }

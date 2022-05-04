@@ -29,6 +29,9 @@
 				<p:column headerText="DNI">
 					<h:outputText value="#{es.NDNIEspecialista}" />
 				</p:column>
+				<p:column headerText="Operacion">
+					<h:commandButton action="#{especialistaController.preUpdate(es)}" value="Modificar" />
+				</p:column>
 				<p:column>
 					<p:commandButton action="listEspecialista" value="Eliminar"
 						actionListener="#{especialistaController.delete(es)}"

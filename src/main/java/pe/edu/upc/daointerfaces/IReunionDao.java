@@ -10,4 +10,5 @@ public interface IReunionDao {
 	public List<Reunion> list();
 	
 	public void delete(int idReunion);
+	public void update(Reunion reu);
 }

@@ -9,4 +9,5 @@ public interface IAlumnoDao {
 	public List<Alumno>list();
 	
 	public void delete(int idAlumno);
+	public void update(Alumno a);
 }

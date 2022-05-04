@@ -49,4 +49,14 @@ public class AlumnoDaoImpl implements IAlumnoDao {
 			System.out.println("Error al eliminar alumno en el dao");
 		}
 	}
+	@Transactional
+	@Override
+	public void update(Alumno a) {
+		try {
+			em.merge(a);
+		} catch (Exception e) {
+			System.out.println("Error al modificar alumno en el dao");
+		}
+		
+	}
 }

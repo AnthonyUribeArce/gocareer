@@ -48,7 +48,17 @@ public class PublicacionController {
 			System.out.println("Error al listar en el controlador de publicacion");
 		}
 	}
-	
+	public String preUpdate(Publicacion pub) {
+		this.setPub(pub);
+		return "modificarPublicacion.xhtml";
+	}
+	public void Update() {
+		try {
+			pubService.update(this.pub);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de publicacion");
+		}
+	}
 	public void delete(Publicacion pub) {
 		try {
 			pubService.delete(pub.getCPublicacion());

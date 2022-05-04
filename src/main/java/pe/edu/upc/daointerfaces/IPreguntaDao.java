@@ -10,4 +10,5 @@ public interface IPreguntaDao {
 	public List<Pregunta> list();
 	
 	public void delete(int idPregunta);
+	public void update(Pregunta pre);
 }

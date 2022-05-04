@@ -38,7 +38,10 @@
 				<p:column headerText="Especialista">
 					<h:outputText value="#{reu.especialista.NApellidosEspecialista}" />
 				</p:column>
-
+				<p:column headerText="Operacion">
+					<h:commandButton action="#{reunionController.preUpdate(reu)}"
+						value="Modificar" />
+				</p:column>
 				<p:column>
 					<p:commandButton action="listReunion" value="Eliminar"
 						actionListener="#{reunionController.delete(reu)}" update="@form">
@@ -47,8 +50,10 @@
 							icon="pi pi-exclamation-triangle" />
 					</p:commandButton>
 					<p:confirmDialog global="true" showEffect="fade">
-						<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes" icon="pi pi-check" type="button" update="@form"/>
-						<p:commandButton value="No" styleClass="ui-confirmdialog-no" icon="pi pi-times" type="button" update="@form"/>
+						<p:commandButton value="Yes" styleClass="ui-confirmdialog-yes"
+							icon="pi pi-check" type="button" update="@form" />
+						<p:commandButton value="No" styleClass="ui-confirmdialog-no"
+							icon="pi pi-times" type="button" update="@form" />
 					</p:confirmDialog>
 				</p:column>
 

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/master.xhtml">
+	<ui:define name="content">
+		<h2>Modificar especialistas</h2>
+		<h:form>
+			<h:outputLabel value="Codigo del especialista" for="ide"
+				styleClass="control-label" />
+			<h:inputText value="#{especialistaController.e.CEspecialista}"
+				id="ide" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Nombres" for="namee" styleClass="control-label" />
+			<h:inputText value="#{especialistaController.e.NNombreEspecialista}"
+				id="namee" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Apellidos" for="lnamee"
+				styleClass="control-label" />
+			<h:inputText
+				value="#{especialistaController.e.NApellidosEspecialista}"
+				id="lnamee" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Correo" for="emaile" styleClass="control-label" />
+			<h:inputText value="#{especialistaController.e.TCorreoEspecialista}"
+				id="emaile" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Telefono" for="telfe"
+				styleClass="control-label" />
+			<h:inputText
+				value="#{especialistaController.e.NTelefonoEspecialista}" id="telfe"
+				styleClass="form-control" />
+			<br />
+			<h:outputLabel value="DNI" for="dni" styleClass="control-label" />
+			<h:inputText value="#{especialistaController.e.NDNIEspecialista}"
+				id="dni" styleClass="form-control" />
+			<br />
+			<p:commandButton value="Actualizar"
+				actionListener="#{especialistaController.Update()}"
+				action="listEspecialista?faces-redirect=true"  update="@form"></p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>

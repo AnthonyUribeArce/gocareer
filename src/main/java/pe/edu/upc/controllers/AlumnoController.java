@@ -49,6 +49,19 @@ public class AlumnoController {
 		}
 	}
 
+	
+	public String preUpdate(Alumno a) {
+		this.setA(a);
+		return "modificarAlumno.xhtml";
+	}
+	public void Update() {
+		try {
+			aService.update(this.a);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de Alumno");
+		}
+	}
+	
 	public void delete(Alumno al) {
 		try {
 			aService.delete(al.getCEstudiante());

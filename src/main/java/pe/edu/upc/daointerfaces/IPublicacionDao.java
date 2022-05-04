@@ -10,4 +10,5 @@ public interface IPublicacionDao {
 	public List<Publicacion> list();
 
 	public void delete(int idPubli);
+	public void update(Publicacion pub);
 }

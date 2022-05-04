@@ -8,4 +8,5 @@ public interface IEspecialistaService {
 	public void insert(Especialista es);
 	public List<Especialista>list();
 	public void delete(int idEspecialista);
+	public void update(Especialista es);
 }

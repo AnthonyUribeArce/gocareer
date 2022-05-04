@@ -30,4 +30,10 @@ public class AlumnoServiceImpl implements IAlumnoService {
 		aDao.delete(idAlumno);
 	}
 
+	@Override
+	public void update(Alumno a) {
+		aDao.update(a);
+		
+	}
+
 }

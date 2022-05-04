@@ -28,4 +28,10 @@ public class PublicacionServiceImpl implements IPublicacionService{
 		pubDao.delete(idPubli);
 	}
 
+	@Override
+	public void update(Publicacion pub) {
+		pubDao.update(pub);
+		
+	}
+
 }

@@ -47,6 +47,25 @@ public class CarreraController {
 			System.out.println("Error al listar en el controller de Carrera");
 		}
 	}
+	public String preUpdate(Carrera c) {
+		this.setC(c);
+		return "modificarCarrera.xhtml";
+	}
+	public void Update() {
+		try {
+			cService.update(this.c);
+		} catch (Exception e) {
+			System.out.println("Error al modificar en el controller de carrera");
+		}
+	}
+	public void delete(Carrera c) {
+		try {
+			cService.delete(c.getCCarrera());
+			this.list();
+		} catch (Exception e) {
+			System.out.println("Error al eliminar en el controller de carrera");
+		}
+	}
 	public Carrera getC() {
 		return c;
 	}

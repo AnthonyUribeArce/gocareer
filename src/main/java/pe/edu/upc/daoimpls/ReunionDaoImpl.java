@@ -49,5 +49,14 @@ public class ReunionDaoImpl implements IReunionDao{
 			System.out.println("Error al eliminar reunion en el dao");
 		}
 	}
+	@Transactional
+	@Override
+	public void update(Reunion reu) {
+		try {
+			em.merge(reu);
+		} catch (Exception e) {
+			System.out.println("Error al modificar reunion en el dao");
+		}
+	}
 
 }
