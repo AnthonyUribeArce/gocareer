@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<ui:composition template="/master.xhtml">
+	<ui:define name="content">
+		<h2>Registro de alumno</h2>
+		<h:form>
+			<h:outputLabel value="Id" for="id" styleClass="control-label" />
+			<h:inputText value="#{alumnoController.a.CEstudiante}" id="id"
+				styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Nombres" for="name" styleClass="control-label" />
+			<h:inputText value="#{alumnoController.a.NNombresEstudiante}"
+				id="name" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Apellidos" for="lnames"
+				styleClass="control-label" />
+			<h:inputText value="#{alumnoController.a.NApellidosEstudiante}"
+				id="lnames" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Telefono" for="telf" styleClass="control-label" />
+			<h:inputText value="#{alumnoController.a.NTelefonoEstudiante}"
+				id="telf" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="Correo" for="email" styleClass="control-label" />
+			<h:inputText value="#{alumnoController.a.TCorreoEstudiante}"
+				id="email" styleClass="form-control" />
+			<br />
+			<h:outputLabel value="FechaNac" for="fecha"
+				styleClass="control-label" />
+			<p:calendar id="fecha" pattern="dd/MM/yyyy"
+				value="#{alumnoController.a.DCumpleanios}" showOn="button"
+				timeZone="America/Mexico_City"></p:calendar>
+			<br />
+			<p:commandButton value="Grabar"
+				actionListener="#{alumnoController.insert()}"
+				action="alumno?faces-redirect=true"  update="@form"></p:commandButton>
+		</h:form>
+	</ui:define>
+</ui:composition>
+</html>
