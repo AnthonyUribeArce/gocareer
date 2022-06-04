@@ -44,7 +44,7 @@ public class StudentController {
 			model.addAttribute("error", e.getMessage());
 		}
 		
-		return "/student/";
+		return "/student/frmList";
 	}
 
 }
