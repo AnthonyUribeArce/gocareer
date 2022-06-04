@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+			<div class="table-resposive">
+
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombres</th>
+							<th>Apellidos</th>
+							<th>Fecha de nacimiento</th>
+							<th>Email</th>
+							<th>Telefono</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="s:${listaEstudiantes}">
+							<td th:text="${s.CStudent}"></td>
+							<td th:text="${s.nameStudent}"></td>
+							<td th:text="${s.lastNameStudent}"></td>
+							<td th:text="${s.birthDateStudent}"></td>
+							<td th:text="${s.emailStudent}"></td>
+							<td th:text="${s.cellStudent}"></td>
+							<td><a th:href="@{/estudiantes/eliminar?id=}+${s.CStudent}">Eliminar</a></td>
+							<td><a th:href="@{'/estudiantes/irmodificar/'+${s.CStudent}}">Modificar</a></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
