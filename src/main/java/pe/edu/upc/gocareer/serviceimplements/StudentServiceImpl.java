@@ -29,7 +29,7 @@ public class StudentServiceImpl implements IStudentService{
 
 	@Override
 	public void delete(int idStudent) {
-		studentRepository.deleteById(idStudent);
+		// TODO Auto-generated method stub
 		
 	}
 

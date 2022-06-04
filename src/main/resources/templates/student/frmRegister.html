@@ -6,45 +6,41 @@
 </head>
 <body>
 	<header th:replace="master/master :: header"></header>
-
+	<section class="home">
+		<h1>Registrarme</h1>
+	</section>
 	<div class="container">
 		<div>
-			<form th:action="@{/estudiantes/guardar}" method="post"
+			<form th:action="@{/personitas/guardar}" method="post"
 				th:object="${s}">
-				<div class="col-sm-12">
-					<label class="form-label">Nombres: </label> <input type="text"
-						class="form-control" th:field="*{nameStudent}"></input>
+				<div>
+					<label>Nombres:</label> <input type="text"
+						th:field="*{nameStudent}">
 				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Apellidos: </label> <input type="text"
-						class="form-control" th:field="*{lastNameStudent}"></input>
+				<br />
+				<div>
+					<label>Apellidos:</label> <input type="text"
+						th:field="*{lastNameStudent}">
 				</div>
-
-				<div class="col-sm-2">
-					<label class="form-label">Fecha de nacimiento: </label> <input
-						type="date" class="form-control" th:field="*{birthDateStudent}"></input>
+				<br />
+				<div>
+					<label>Fechas de nacimiento:</label> <input type="date"
+						th:field="*{birthDateStudent}">
 				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Email: </label> <input type="text"
-						class="form-control" th:field="*{emailStudent}"></input>
+				<br />
+				<div>
+					<label>Correo:</label> <input type="text"
+						th:field="*{emailStudent}">
 				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Contrasena: </label> <input type="text"
-						class="form-control" th:field="*{passwordStudent}"></input>
+				<br />
+				<div>
+					<label>Telefono:</label> <input type="text"
+						th:field="*{cellStudent}">
 				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Telefono: </label> <input type="text"
-						class="form-control" th:field="*{cellStudent}"></input>
+				<br /> <br />
+				<div>
+					<input type="submit" value="Registrar">
 				</div>
-
-				<div class="col-sm-12">
-					<input type="submit" class="btn btn-dark" value="Registrar"></input>
-				</div>
-
 			</form>
 		</div>
 	</div>
