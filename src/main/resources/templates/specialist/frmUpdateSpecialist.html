@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+	<div class="container">
+		<div>
+			<form th:action="@{/especialistas/modificar}" method="post"
+				th:object="${spe}">
+				<div class="col-sm-12">
+					<label class="form-label">ID:</label> <input type="text"
+						class="form-control" th:field="*{CSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Nombres:</label> <input type="text"
+						class="form-control" th:field="*{nameSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Apellidos:</label> <input type="text"
+						class="form-control" th:field="*{lastNameSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Correo:</label> <input type="text"
+						class="form-control" th:field="*{emailSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Telefono:</label> <input type="text"
+						class="form-control" th:field="*{cellSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Contraseña:</label> <input type="text"
+						class="form-control" th:field="*{passwordSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">DNI:</label> <input type="text"
+						class="form-control" th:field="*{dniSpecialist}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">CPSP:</label> <input type="text"
+						class="form-control" th:field="*{cpspSpecialist}">
+				</div>
+				<br>
+				<div class="col-sm-12">
+					<input type="submit" class="btn btn-dark" value="Modificar">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
