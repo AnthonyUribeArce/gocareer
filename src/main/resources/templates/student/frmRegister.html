@@ -6,6 +6,39 @@
 </head>
 <body>
 	<header th:replace="master/master :: header"></header>
-	formulario registrar
+	<section class="home">
+		<h1>Preparado para tu futuro?</h1>
+	</section>
+	<div class="container">
+		<div>
+			<form th:action="@{/personitas/guardar}" method="post"
+				th:object="${s}">
+				<div>
+					<label>Nombres:</label> <input type="text"
+						th:field="*{nameStudent}">
+				</div>
+				<div>
+					<label>Apellidos:</label> <input type="text"
+						th:field="*{lastNameStudent}">
+				</div>
+				<div>
+					<label>Fechas de nacimiento:</label> <input
+						type="date" th:field="*{birthDateStudent}">
+				</div>
+				<div>
+					<label>Correo:</label> <input type="text"
+						 th:field="*{emailStudent}">
+				</div>
+				<div>
+					<label>Telefono:</label> <input type="text"
+						th:field="*{cellStudent}">
+				</div>
+				<br>
+				<div>
+					<input type="submit" value="Registrar">
+				</div>
+			</form>
+		</div>
+	</div>
 </body>
 </html>
