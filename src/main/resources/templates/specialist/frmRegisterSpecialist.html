@@ -7,40 +7,43 @@
 <body>
 	<header th:replace="master/master :: header"></header>
 	<center>
-		<h2>Registrarme como estudiante</h2>
+		<h2>Registrarme como especialista</h2>
 	</center>
 	<div class="container">
 		<div>
-			<form th:action="@{/estudiantes/guardar}" method="post"
-				th:object="${s}">
+			<form th:action="@{/especialistas/guardar}" method="post"
+				th:object="${sp}">
 				<div class="col-sm-12">
 					<label class="form-label">Nombres: </label> <input type="text"
-						class="form-control" th:field="*{nameStudent}"></input>
+						class="form-control" th:field="*{nameSpecialist}"></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Apellidos: </label> <input type="text"
-						class="form-control" th:field="*{lastNameStudent}"></input>
-				</div>
-
-				<div class="col-sm-2">
-					<label class="form-label">Fecha de nacimiento: </label> <input
-						type="date" class="form-control" th:field="*{birthDateStudent}"></input>
+						class="form-control" th:field="*{lastNameSpecialist}"></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Email: </label> <input type="text"
-						class="form-control" th:field="*{emailStudent}"></input>
-				</div>
-
-				<div class="col-sm-12">
-					<label class="form-label">Contrasena: </label> <input type="text"
-						class="form-control" th:field="*{passwordStudent}"></input>
+						class="form-control" th:field="*{emailSpecialist}"></input>
 				</div>
 
 				<div class="col-sm-12">
 					<label class="form-label">Telefono: </label> <input type="text"
-						class="form-control" th:field="*{cellStudent}"></input>
+						class="form-control" th:field="*{cellSpecialist}"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">DNI: </label> <input type="text"
+						class="form-control" th:field="*{dniSpecialist}"></input>
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">CPSP: </label> <input type="text"
+						class="form-control" th:field="*{cpspSpecialist}"></input>
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Contrasena: </label> <input type="text"
+						class="form-control" th:field="*{passwordSpecialist}"></input>
 				</div>
 				<br>
 
@@ -52,7 +55,6 @@
 						<a class="nav-link" href="../menu/type" style="color: #d3bb00">Volver</a>
 					</button>
 				</div>
-
 			</form>
 		</div>
 	</div>

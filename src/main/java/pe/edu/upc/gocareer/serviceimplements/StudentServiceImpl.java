@@ -1,6 +1,7 @@
 package pe.edu.upc.gocareer.serviceimplements;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,13 +30,17 @@ public class StudentServiceImpl implements IStudentService{
 
 	@Override
 	public void delete(int idStudent) {
-		// TODO Auto-generated method stub
-		
+		studentRepository.deleteById(idStudent);
 	}
 
 	@Override
+	public Optional<Student> listId(int idStudent){
+		return studentRepository.findById(idStudent);
+	}
+	
+	@Override
 	public void update(Student student) {
-		// TODO Auto-generated method stub
+		studentRepository.save(student);
 		
 	}
 

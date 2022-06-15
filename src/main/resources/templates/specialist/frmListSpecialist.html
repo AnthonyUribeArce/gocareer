@@ -17,23 +17,25 @@
 							<th>Id</th>
 							<th>Nombres</th>
 							<th>Apellidos</th>
-							<th>Fecha de nacimiento</th>
 							<th>Email</th>
 							<th>Telefono</th>
+							<th>CPSP</th>
 							<th>Operacion</th>
 							<th>Operacion</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="s:${listaEstudiantes}">
-							<td th:text="${s.CStudent}"></td>
-							<td th:text="${s.nameStudent}"></td>
-							<td th:text="${s.lastNameStudent}"></td>
-							<td th:text="${s.birthDateStudent}"></td>
-							<td th:text="${s.emailStudent}"></td>
-							<td th:text="${s.cellStudent}"></td>
-							<td><a th:href="@{/estudiantes/eliminar?id=}+${s.CStudent}">Eliminar</a></td>
-							<td><a th:href="@{'/estudiantes/irmodificar/'+${s.CStudent}}">Modificar</a></td>
+						<tr th:each="sp:${listaEspecialistas}">
+							<td th:text="${sp.CSpecialist}"></td>
+							<td th:text="${sp.nameSpecialist}"></td>
+							<td th:text="${sp.lastNameSpecialist}"></td>
+							<td th:text="${sp.emailSpecialist}"></td>
+							<td th:text="${sp.cellSpecialist}"></td>
+							<td th:text="${sp.cpspSpecialist}"></td>
+							<td><a
+								th:href="@{/especialistas/eliminar?id=}+${sp.CSpecialist}">Eliminar</a></td>
+							<td><a
+								th:href="@{'/especialistas/irmodificar/'+${sp.CSpecialist}}">Modificar</a></td>
 						</tr>
 
 					</tbody>

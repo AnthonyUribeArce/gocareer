@@ -45,10 +45,10 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int cStudent, String nameStudent, String lastNameStudent, String emailStudent, String cellStudent,
+	public Student(int CStudent, String nameStudent, String lastNameStudent, String emailStudent, String cellStudent,
 			String passwordStudent, Date birthDateStudent) {
 		super();
-		CStudent = cStudent;
+		this.CStudent = CStudent;
 		this.nameStudent = nameStudent;
 		this.lastNameStudent = lastNameStudent;
 		this.emailStudent = emailStudent;
@@ -61,8 +61,8 @@ public class Student {
 		return CStudent;
 	}
 
-	public void setCStudent(int cStudent) {
-		CStudent = cStudent;
+	public void setCStudent(int CStudent) {
+		this.CStudent = CStudent;
 	}
 
 	public String getNameStudent() {
@@ -112,6 +112,5 @@ public class Student {
 	public void setPasswordStudent(String passwordStudent) {
 		this.passwordStudent = passwordStudent;
 	}
-	
 
 }
