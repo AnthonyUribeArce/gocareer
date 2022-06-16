@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+			<div class="table-resposive">
+
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombres</th>
+							<th>Apellidos</th>
+							<th>Email</th>
+							<th>Telefono</th>
+							<th>CPSP</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="sp:${listaEspecialistas}">
+							<td th:text="${sp.CSpecialist}"></td>
+							<td th:text="${sp.nameSpecialist}"></td>
+							<td th:text="${sp.lastNameSpecialist}"></td>
+							<td th:text="${sp.emailSpecialist}"></td>
+							<td th:text="${sp.cellSpecialist}"></td>
+							<td th:text="${sp.cpspSpecialist}"></td>
+							<td><a
+								th:href="@{/especialistas/eliminar?id=}+${sp.CSpecialist}">Eliminar</a></td>
+							<td><a
+								th:href="@{'/especialistas/irmodificar/'+${sp.CSpecialist}}">Modificar</a></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

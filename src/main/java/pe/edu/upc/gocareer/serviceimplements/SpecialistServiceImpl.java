@@ -1,6 +1,7 @@
 package pe.edu.upc.gocareer.serviceimplements;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,14 +29,18 @@ public class SpecialistServiceImpl implements ISpecialistService {
 
 	@Override
 	public void delete(int idSpecialist) {
-		// TODO Auto-generated method stub
-
+		specialistRepository.deleteById(idSpecialist);
 	}
 
 	@Override
 	public void update(Specialist specialist) {
-		// TODO Auto-generated method stub
+		specialistRepository.save(specialist);
+	}
 
+	@Override
+	public Optional<Specialist> listId(int idSpecialist) {
+		// TODO Auto-generated method stub
+		return specialistRepository.findById(idSpecialist);
 	}
 
 }

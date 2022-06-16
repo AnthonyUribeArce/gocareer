@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+	<div class="container">
+		<div>
+			<form th:action="@{/preguntas/modificar}" method="post"
+				th:object="${qst}">
+				<div class="col-sm-12">
+					<label class="form-label">Pregunta: </label> <input type="text"
+						class="form-control" th:field="*{TDetailQuestion}"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Respuesta: </label> <input type="text"
+						class="form-control" th:field="*{TAnswerQuestion}"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Especialista: </label> <select
+						name="selectSpecialist" class="form-control"
+						th:field="*{specialist.CSpecialist}">
+						<option th:each="spc:${listaEspecialistas}"
+							th:value="${spc.CSpecialist}" th:text="${spc.nameSpecialist}"
+							th:select="(${spc.CSpecialist}==*{specialist.CSpecialist})"></option>
+					</select>
+				</div>
+				<br>
+				<div class="col-sm-12">
+					<input type="submit" class="btn btn-dark" value="Modificar">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

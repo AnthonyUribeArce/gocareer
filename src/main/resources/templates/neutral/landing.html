@@ -5,32 +5,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header th:replace="master/master :: header"></header>
 	<section class="home">
-		<center>
-			<h1>Bienvenido</h1>
-		</center>
+		<div class="home-info">
+			<h1>Estas listo para tu futuro?</h1>
+			<p>En GoCareer te guiaremos para que puedas encontrar tu carrera ideal</p>
+			<div class="home-info-buttons">
+				<a class="button" href="../menu/login">Iniciar sesion</a> 
+				<a class="button" href="../menu/type">Registrarme</a>
+			</div>
+		</div>
 	</section>
-	<center>
-		<br /> <br />
-
-		<button class="btn btn-success"
-			style="background-color: #7137c8; border-color: black">
-			<a class="nav-link" href="../menu/login" style="color: #d3bb00">Iniciar
-				sesion</a>
-		</button>
-
-		<br /> <br />
-
-		<button class="btn btn-success"
-			style="background-color: #7137c8; border-color: black">
-			<a class="nav-link" href="../menu/type" style="color: #d3bb00">Registrarme</a>
-		</button>
-
-		<br /> <br /> <br /> <a class="navbar-brand"> <img alt=""
-			th:src="@{/images/home.jpg}" width="900">
-		</a>
-
-	</center>
 </body>
 </html>

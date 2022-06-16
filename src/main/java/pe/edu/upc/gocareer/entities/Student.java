@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,22 +21,28 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int CStudent;
-
+	
 	@Column(name = "nameStudent", nullable = false, length = 40)
+	@NotEmpty(message = "No se puede dejar en blanco.")
 	private String nameStudent;
 
 	@Column(name = "lastNameStudent", nullable = false, length = 40)
+	@NotEmpty(message = "No se puede dejar en blanco.")
 	private String lastNameStudent;
 
 	@Column(name = "emailStudent", nullable = false, length = 50)
+	@NotEmpty(message = "No se puede dejar en blanco.")
 	private String emailStudent;
 
 	@Column(name = "cellStudent", nullable = false, length = 9)
+	@NotEmpty(message = "No se puede dejar en blanco.")
 	private String cellStudent;
 
 	@Column(name = "passwordStudent", nullable = false, length = 20)
+	@NotEmpty(message = "No se puede dejar en blanco.")
 	private String passwordStudent;
 
+	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "birthDateStudent", nullable = false)
@@ -45,10 +53,10 @@ public class Student {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Student(int cStudent, String nameStudent, String lastNameStudent, String emailStudent, String cellStudent,
+	public Student(int CStudent, String nameStudent, String lastNameStudent, String emailStudent, String cellStudent,
 			String passwordStudent, Date birthDateStudent) {
 		super();
-		CStudent = cStudent;
+		this.CStudent = CStudent;
 		this.nameStudent = nameStudent;
 		this.lastNameStudent = lastNameStudent;
 		this.emailStudent = emailStudent;
@@ -61,8 +69,8 @@ public class Student {
 		return CStudent;
 	}
 
-	public void setCStudent(int cStudent) {
-		CStudent = cStudent;
+	public void setCStudent(int CStudent) {
+		this.CStudent = CStudent;
 	}
 
 	public String getNameStudent() {
@@ -112,6 +120,5 @@ public class Student {
 	public void setPasswordStudent(String passwordStudent) {
 		this.passwordStudent = passwordStudent;
 	}
-	
 
 }

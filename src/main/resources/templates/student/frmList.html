@@ -1,11 +1,60 @@
 <!DOCTYPE html>
-<html xmlns:th="http://wwww.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
 	<header th:replace="master/master :: header"></header>
-	Lista de personas
+
+	<div class="container">
+		<div>
+			<div class="table-resposive">
+				<form class="form-inline" th:action="@{/estudiantes/listar}">
+					<div class="form-group mb-2">
+						<label>Filtrar: </label>
+					</div>
+					<div class="form-group mx-sm-3 mb-2">
+						<input type="text" name="palabraClave" class="form-control" id="palabraClave"
+							th:value="${palabraClave}" placeholder="Digite el valor a buscar" required>
+					</div>
+					<button type="submit" th:onclick="demo()">Buscar</button>
+					&nbsp;&nbsp; <input type="submit" class="btn btn-secondary mb-2"
+						value="Limpiar">
+				</form>
+				<br>
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Nombres</th>
+							<th>Apellidos</th>
+							<th>Fecha de nacimiento</th>
+							<th>Email</th>
+							<th>Telefono</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="s:${listaEstudiantes}">
+							<td th:text="${s.CStudent}"></td>
+							<td th:text="${s.nameStudent}"></td>
+							<td th:text="${s.lastNameStudent}"></td>
+							<td th:text="${s.birthDateStudent}"></td>
+							<td th:text="${s.emailStudent}"></td>
+							<td th:text="${s.cellStudent}"></td>
+							<td><a th:href="@{/estudiantes/eliminar?id=}+${s.CStudent}">Eliminar</a></td>
+							<td><a
+								th:href="@{'/estudiantes/irmodificar/'+${s.CStudent}}">Modificar</a></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
 </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+	<div class="container">
+		<div>
+			<form th:action="@{/estudiantes/modificar}" method="post"
+				th:object="${stn}">
+				<div class="col-sm-12">
+					<label class="form-label">ID:</label> <input type="text"
+						class="form-control" th:field="*{CStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Nombres:</label> <input type="text"
+						class="form-control" th:field="*{nameStudent}">
+					<p th:if="${#fields.hasErrors('nameStudent')}"
+						th:errorclass="error" th:errors="*{nameStudent}" />
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Apellidos:</label> <input type="text"
+						class="form-control" th:field="*{lastNameStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Fechas de nacimiento:</label> <input
+						type="date" class="form-control" th:field="*{birthDateStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Correo:</label> <input type="text"
+						class="form-control" th:field="*{emailStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Telefono:</label> <input type="text"
+						class="form-control" th:field="*{cellStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Contraseña:</label> <input type="text"
+						class="form-control" th:field="*{passwordStudent}">
+				</div>
+				<br>
+				<div class="col-sm-12">
+					<input type="submit" class="btn btn-dark" value="Modificar">
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
