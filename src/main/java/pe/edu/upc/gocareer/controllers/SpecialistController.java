@@ -57,7 +57,7 @@ public class SpecialistController {
 	@RequestMapping("/eliminar")
 	public String deleteSpecialist(Map<String, Object> model, @RequestParam(value = "id") Integer id) {
 		try {
-			if(id!=null && id>0) {
+			if (id != null && id > 0) {
 				speService.delete(id);
 				model.put("listaEspecialistas", speService.list());
 			}
@@ -66,16 +66,23 @@ public class SpecialistController {
 		}
 		return "/specialist/frmListSpecialist";
 	}
-	
+
 	@RequestMapping("irmodificar/{id}")
 	public String goUpdateSpecialist(@PathVariable int id, Model model) {
-		Optional<Specialist> objSpe=speService.listId(id);
-		model.addAttribute("spe",objSpe.get());
+		Optional<Specialist> objSpe = speService.listId(id);
+		model.addAttribute("spe", objSpe.get());
 		return "specialist/frmUpdateSpecialist";
 	}
+
 	@PostMapping("/modificar")
 	public String updateSpecialist(Specialist spe) {
 		speService.update(spe);
 		return "redirect:/especialistas/listar";
+	}
+
+	@RequestMapping("/reporte2")
+	public String reporte1(Map<String, Object> model) {
+		model.put("list", speService.reporte2());
+		return "specialist/frmReporte2";
 	}
 }

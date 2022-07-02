@@ -12,4 +12,5 @@ public interface IStudentService {
 	public void delete(int idStudent);
 	Optional<Student>listId(int idStudent);
 	public void update(Student student);
+	List<String[]> reporte1();
 }

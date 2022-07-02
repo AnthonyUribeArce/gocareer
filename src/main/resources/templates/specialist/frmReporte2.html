@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Reporte de citas por cada estudiante</title>
+</head>
+<body>
+	<header th:replace="master/masterAdmin :: header"></header>
+
+	<div class="container">
+		<div>
+			<div class="table-resposive">
+
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Especialista</th>
+							<th>Publicaciones totales</th>
+							<th>Ultima publicacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="r:${list}">
+							<td th:text="${r[0]}"></td>
+							<td th:text="${r[1]}"></td>
+							<td th:text="${r[2]}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	<center>
+		<button class="btn btn-success"
+			style="background-color: #7137c8; border-color: black">
+			<a class="nav-link" href="../menu/home" style="color: #d3bb00">Volver</a>
+		</button>
+	</center>
+</body>
+</html>

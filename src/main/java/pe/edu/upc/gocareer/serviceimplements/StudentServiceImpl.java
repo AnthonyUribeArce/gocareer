@@ -11,20 +11,20 @@ import pe.edu.upc.gocareer.repositories.IStudentRepository;
 import pe.edu.upc.gocareer.serviceinterface.IStudentService;
 
 @Service
-public class StudentServiceImpl implements IStudentService{
+public class StudentServiceImpl implements IStudentService {
 
 	@Autowired
 	private IStudentRepository studentRepository;
-	
+
 	@Override
 	public void insert(Student student) {
 		studentRepository.save(student);
-		
+
 	}
 
 	@Override
 	public List<Student> list() {
-		
+
 		return studentRepository.findAll();
 	}
 
@@ -34,14 +34,17 @@ public class StudentServiceImpl implements IStudentService{
 	}
 
 	@Override
-	public Optional<Student> listId(int idStudent){
+	public Optional<Student> listId(int idStudent) {
 		return studentRepository.findById(idStudent);
 	}
-	
+
 	@Override
 	public void update(Student student) {
 		studentRepository.save(student);
-		
 	}
 
+	@Override
+	public List<String[]> reporte1() {
+		return studentRepository.reporte1();
+	}
 }

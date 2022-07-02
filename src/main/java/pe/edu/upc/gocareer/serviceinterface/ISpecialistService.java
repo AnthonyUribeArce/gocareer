@@ -11,4 +11,5 @@ public interface ISpecialistService {
 	public void delete(int idSpecialist);
 	Optional<Specialist>listId(int idSpecialist);
 	public void update(Specialist specialist);
+	List<String[]> reporte2();
 }

@@ -43,4 +43,8 @@ public class SpecialistServiceImpl implements ISpecialistService {
 		return specialistRepository.findById(idSpecialist);
 	}
 
+	@Override
+	public List<String[]> reporte2() {
+		return specialistRepository.reporte2();
+	}
 }

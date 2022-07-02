@@ -42,15 +42,6 @@ public class StudentController {
 			return "redirect:/estudiantes/nuevo";
 		}
 	}
-//	@PostMapping("/guardar")
-//	public String saveStudent(@Valid @ModelAttribute Student student, BindingResult binRes, Model model) {
-//		if(binRes.hasErrors()) {
-//			model.addAttribute("student", new Student());
-//			return "student/frmRegister";
-//		}
-//		studService.insert(student);
-//		return "redirect:/estudiantes/nuevo";
-//	}
 
 	@GetMapping("/listar")
 	public String listStudent(Model model) {
@@ -86,5 +77,11 @@ public class StudentController {
 	public String updateStudent(Student stu) {
 		studService.update(stu);
 		return "redirect:/estudiantes/listar";
+	}
+	
+	@RequestMapping("/reporte1")
+	public String reporte1(Map<String,Object> model){
+		model.put("list", studService.reporte1());
+		return "student/frmReporte1";
 	}
 }
