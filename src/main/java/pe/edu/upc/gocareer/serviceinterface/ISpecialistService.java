@@ -12,4 +12,5 @@ public interface ISpecialistService {
 	Optional<Specialist>listId(int idSpecialist);
 	public void update(Specialist specialist);
 	List<String[]> reporte2();
+	List<String[]> reporte3();
 }

@@ -85,4 +85,10 @@ public class SpecialistController {
 		model.put("list", speService.reporte2());
 		return "specialist/frmReporte2";
 	}
+	
+	@RequestMapping("/reporte3")
+	public String reporte3(Map<String,Object> model){
+		model.put("list", speService.reporte3());
+		return "specialist/frmReporte3";
+	}
 }

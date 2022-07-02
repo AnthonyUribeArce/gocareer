@@ -47,4 +47,9 @@ public class SpecialistServiceImpl implements ISpecialistService {
 	public List<String[]> reporte2() {
 		return specialistRepository.reporte2();
 	}
+	
+	@Override
+	public List<String[]> reporte3() {
+		return specialistRepository.reporte3();
+	}
 }

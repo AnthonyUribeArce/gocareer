@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<header th:replace="master/master :: header"></header>
+	<header th:replace="master/masterAdmin :: header"></header>
 	<div class="container">
 		<div>
 			<form th:action="@{/carreras/modificar}" method="post"
@@ -18,7 +18,7 @@
 					<label class="form-label">Nombre:</label> <input type="text"
 						class="form-control" th:field="*{nameCareer}">
 				</div>
-			
+
 				<br>
 				<div class="col-sm-12">
 					<input type="submit" class="btn btn-dark" value="Modificar">

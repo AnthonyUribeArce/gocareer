@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:replace="master/master :: head">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Reporte de citas por cada estudiante</title>
 </head>
 <body>
 	<header th:replace="master/masterAdmin :: header"></header>
@@ -14,26 +14,25 @@
 				<table class="table table-white">
 					<thead>
 						<tr>
-							<th>Id</th>
-							<th>Nombre</th>
-							<th>Operacion</th>
-							<th>Operacion</th>
+							<th>Especialista</th>
+							<th>Preguntas totales</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr th:each="ca:${listaCarreras}">
-							<td th:text="${ca.CCareer}"></td>
-							<td th:text="${ca.nameCareer}"></td>
-							<td><a th:href="@{/carreras/eliminar?id=}+${ca.CCareer}">Eliminar</a></td>
-							<td><a th:href="@{'/carreras/irmodificar/'+${ca.CCareer}}">Modificar</a></td>
+						<tr th:each="r:${list}">
+							<td th:text="${r[0]}"></td>
+							<td th:text="${r[1]}"></td>
 						</tr>
-
 					</tbody>
 				</table>
-
 			</div>
 		</div>
 	</div>
-
+	<center>
+		<button class="btn btn-success"
+			style="background-color: #7137c8; border-color: black">
+			<a class="nav-link" href="../menu/home" style="color: #d3bb00">Volver</a>
+		</button>
+	</center>
 </body>
 </html>

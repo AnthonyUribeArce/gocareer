@@ -16,4 +16,11 @@ public interface ISpecialistRepository extends JpaRepository<Specialist, Integer
 			+ "group by sp.name_specialist\r\n"
 			+ "order by 1 asc", nativeQuery = true)
 	List<String[]> reporte2();
+	
+	@Query(value = "select sp.name_specialist, count(q.cquestion)\r\n"
+			+ "from specialist sp join question q\r\n"
+			+ "on q.cspecialist=sp.cspecialist\r\n"
+			+ "group by sp.name_specialist\r\n"
+			+ "order by 1 asc", nativeQuery = true)
+	List<String[]> reporte3();
 }

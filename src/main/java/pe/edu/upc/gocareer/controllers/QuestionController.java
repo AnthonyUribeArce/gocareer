@@ -30,7 +30,7 @@ public class QuestionController {
 	
 	@GetMapping("/nuevo")
 	public String newQuestion(Model model) {
-		model.addAttribute("", new Question());
+		model.addAttribute("question", new Question());
 		model.addAttribute("listaEspecialistas", speService.list());
 		return "question/frmRegister";
 	}
