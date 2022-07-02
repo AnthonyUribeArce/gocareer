@@ -1,9 +1,9 @@
-package pe.edu.upc.gocareer.serviceinterface;
+package pe.edu.upc.gocareer.serviceInterface;
 
 import java.util.List;
 import java.util.Optional;
 
-import pe.edu.upc.gocareer.entities.Career;
+import pe.edu.upc.gocareer.entity.Career;
 
 public interface ICareerService {
 	public void insert(Career career);

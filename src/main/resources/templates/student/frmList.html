@@ -10,7 +10,19 @@
 	<div class="container">
 		<div>
 			<div class="table-resposive">
-
+				<form class="form-inline" th:action="@{/estudiantes/listar}">
+					<div class="form-group mb-2">
+						<label>Filtrar: </label>
+					</div>
+					<div class="form-group mx-sm-3 mb-2">
+						<input type="text" name="palabraClave" class="form-control" id="palabraClave"
+							th:value="${palabraClave}" placeholder="Digite el valor a buscar" required>
+					</div>
+					<button type="submit" th:onclick="demo()">Buscar</button>
+					&nbsp;&nbsp; <input type="submit" class="btn btn-secondary mb-2"
+						value="Limpiar">
+				</form>
+				<br>
 				<table class="table table-white">
 					<thead>
 						<tr>
@@ -33,7 +45,8 @@
 							<td th:text="${s.emailStudent}"></td>
 							<td th:text="${s.cellStudent}"></td>
 							<td><a th:href="@{/estudiantes/eliminar?id=}+${s.CStudent}">Eliminar</a></td>
-							<td><a th:href="@{'/estudiantes/irmodificar/'+${s.CStudent}}">Modificar</a></td>
+							<td><a
+								th:href="@{'/estudiantes/irmodificar/'+${s.CStudent}}">Modificar</a></td>
 						</tr>
 
 					</tbody>
