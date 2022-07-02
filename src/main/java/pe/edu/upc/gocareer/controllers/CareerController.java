@@ -26,17 +26,19 @@ public class CareerController {
 
 	@GetMapping("/nuevo")
 	public String newCareer(Model model) {
-		model.addAttribute("ca", new Career());
+		model.addAttribute("carrera", new Career());
 		return "career/frmRegisterCareer";
 	}
 
 	@PostMapping("/guardar")
-	public String saveCareer(@Valid Career car, BindingResult binRes, Model model) {
+	public String saveCareer(@Valid Career carrera, BindingResult binRes, Model model) {
 
 		if (binRes.hasErrors()) {
+			model.addAttribute("carrera", new Career());
 			return "career/frmRegisterCareer";
 		} else {
-			careerService.insert(car);
+			model.addAttribute("carrera", new Career());
+			careerService.insert(carrera);
 			model.addAttribute("mensaje", "Se guardo correctamente!!");
 			return "redirect:/carreras/nuevo";
 		}

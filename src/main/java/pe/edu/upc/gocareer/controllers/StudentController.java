@@ -26,21 +26,31 @@ public class StudentController {
 
 	@GetMapping("/nuevo")
 	public String newStudent(Model model) {
-		model.addAttribute("s", new Student());
+		model.addAttribute("student", new Student());
 		return "student/frmRegister";
 	}
 
 	@PostMapping("/guardar")
-	public String saveStudent(@Valid Student st, BindingResult binRes, Model model) {
-
+	public String saveStudent(@Valid Student student, BindingResult binRes, Model model) {
 		if (binRes.hasErrors()) {
+			
 			return "student/frmRegister";
 		} else {
-			studService.insert(st);
+			model.addAttribute("student", new Student());
+			studService.insert(student);
 			model.addAttribute("mensaje", "Se guardo correctamente!!");
 			return "redirect:/estudiantes/nuevo";
 		}
 	}
+//	@PostMapping("/guardar")
+//	public String saveStudent(@Valid @ModelAttribute Student student, BindingResult binRes, Model model) {
+//		if(binRes.hasErrors()) {
+//			model.addAttribute("student", new Student());
+//			return "student/frmRegister";
+//		}
+//		studService.insert(student);
+//		return "redirect:/estudiantes/nuevo";
+//	}
 
 	@GetMapping("/listar")
 	public String listStudent(Model model) {

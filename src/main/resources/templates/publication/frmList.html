@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+			<div class="table-resposive">
+
+				<table class="table table-white">
+					<thead>
+						<tr>
+							<th>Id</th>
+							<th>Contenido</th>
+							<th>Especialista</th>
+							<th>Fecha</th>
+							<th>Operacion</th>
+							<th>Operacion</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="p:${listaPublicaciones}">
+							<td th:text="${p.CPublication}"></td>
+							<td style="width:50%" th:text="${p.TContentPublication}"></td>
+							<td th:text="${p.specialist.nameSpecialist}"></td>
+							<td th:text="${p.DDatePublication}"></td>
+							<td><a th:href="@{/publicaciones/eliminar?id=}+${p.CPublication}">Eliminar</a></td>
+							<td><a th:href="@{'/publicaciones/irmodificar/'+${p.CPublication}}">Modificar</a></td>
+						</tr>
+
+					</tbody>
+				</table>
+
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

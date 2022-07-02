@@ -17,6 +17,8 @@
 				<div class="col-sm-12">
 					<label class="form-label">Nombres:</label> <input type="text"
 						class="form-control" th:field="*{nameStudent}">
+					<p th:if="${#fields.hasErrors('nameStudent')}"
+						th:errorclass="error" th:errors="*{nameStudent}" />
 				</div>
 				<div class="col-sm-12">
 					<label class="form-label">Apellidos:</label> <input type="text"
@@ -33,6 +35,10 @@
 				<div class="col-sm-12">
 					<label class="form-label">Telefono:</label> <input type="text"
 						class="form-control" th:field="*{cellStudent}">
+				</div>
+				<div class="col-sm-12">
+					<label class="form-label">Contraseña:</label> <input type="text"
+						class="form-control" th:field="*{passwordStudent}">
 				</div>
 				<br>
 				<div class="col-sm-12">

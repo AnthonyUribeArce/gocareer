@@ -8,23 +8,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/menu")
 public class NeutralController {
 
-	@GetMapping("/landing")
-	public String goLanding() {
-		return "neutral/landing";
-	}
+    @GetMapping("/landing")
+    public String goLanding() {
+        return "neutral/landing";
+    }
 
-	@GetMapping("/home")
-	public String goHome() {
-		return "neutral/home";
-	}
+    @GetMapping("/home")
+    public String goHome() {
+        return "neutral/home";
+    }
 
-	@GetMapping("/login")
-	public String goLogin() {
-		return "neutral/login";
-	}
+    @GetMapping("/login")
+    public String goLogin() {
+        return "neutral/login";
+    }
 
-	@GetMapping("/type")
-	public String goType() {
-		return "neutral/type";
-	}
+    @GetMapping("/type")
+    public String goType() {
+        return "neutral/type";
+    }
 }

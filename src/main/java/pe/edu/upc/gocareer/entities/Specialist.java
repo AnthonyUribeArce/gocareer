@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Table(name = "Specialist")
@@ -15,24 +16,31 @@ public class Specialist {
 	private int CSpecialist;
 
 	@Column(name = "nameSpecialist", nullable = false, length = 40)
+	@NotEmpty
 	private String nameSpecialist;
 
 	@Column(name = "lastNameSpecialist", nullable = false, length = 40)
+	@NotEmpty
 	private String lastNameSpecialist;
 
 	@Column(name = "emailSpecialist", nullable = false, length = 50)
+	@NotEmpty
 	private String emailSpecialist;
 
 	@Column(name = "cellSpecialist", nullable = false, length = 9)
+	@NotEmpty
 	private String cellSpecialist;
 
 	@Column(name = "passwordSpecialist", nullable = false, length = 20)
+	@NotEmpty
 	private String passwordSpecialist;
 
 	@Column(name = "dniSpecialist", nullable = false, length = 8)
+	@NotEmpty
 	private String dniSpecialist;
 
 	@Column(name = "cpspSpecialist", nullable = false, length = 5)
+	@NotEmpty
 	private String cpspSpecialist;
 
 	public Specialist() {

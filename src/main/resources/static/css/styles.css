@@ -1,0 +1,87 @@
+@charset "ISO-8859-1";
+
+html {
+	box-sizing: border-box;
+	font-display: swap;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+.home {
+	background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.8)),
+		url("/images/home.jpg");
+	height: 100vh;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+.button {
+	background-color: #7137c8;
+	border: 1px solid #823be3;
+	border-radius: 1rem;
+	color: #d3bb00;
+	font-size: 20px;
+	padding: 5px 80px;
+	box-sizing: border-box;
+	letter-spacing: .1ch;
+	text-decoration: none;
+	font-weight: bold;
+	margin-left: 20px;
+}
+
+.button:hover {
+	cursor: pointer;
+	color: #d3bb00;
+}
+
+li {
+	font-size: 18px;
+}
+
+.home-info {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.home-info h1 {
+	font-size: 100px;
+	padding: 20px;
+	color: white;
+}
+
+.home-info p {
+	font-size: 30px;
+	color: white;
+	padding-bottom: 20px;
+}
+
+.navbar-collapse {
+	display: flex;
+	margin-left: 800px;
+}
+.effects::after {
+	content: ' ';
+	display: block;
+	width: 0;
+	height: 1px;
+	background: #6610f2;
+	transition: width .3s;
+	margin-top: 10px;
+}
+
+.effects:hover::after {
+	width: 100%;
+	transition: width .3s;
+}
+.navbar-gocareer{
+	background-color: #ffc107;
+}
+.effects:required{
+	color: #6610f2;
+}

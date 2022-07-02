@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="master/master :: head">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript" th:src="@{/js/app5.js}"></script>
+</head>
+<body>
+	<header th:replace="master/master :: header"></header>
+
+	<div class="container">
+		<div>
+			<form th:action="@{/preguntas/guardar}" method="post"
+				th:object="${question}">
+				<div class="col-sm-12">
+					<label class="form-label">Pregunta: </label> <input type="text" id="pquest"
+						class="form-control" th:field="*{TDetailQuestion}"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Respuesta: </label> <input type="text" id="aquest"
+						class="form-control" th:field="*{TAnswerQuestion}"></input>
+				</div>
+
+				<div class="col-sm-12">
+					<label class="form-label">Especialista: </label> <select
+						name="selectSpecialist" class="form-control"
+						th:field="*{specialist.CSpecialist}">
+						<option th:each="spc:${listaEspecialistas}"
+							th:value="${spc.CSpecialist}" th:text="${spc.nameSpecialist}"
+							th:select="(${spc.CSpecialist}==*{specialist.CSpecialist})"></option>
+					</select>
+				</div>
+
+				<button type="submit" th:onclick="demo()">Registrar</button>
+
+
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" th:src="@{/js/app5.js}"></script>
+</body>
+</html>

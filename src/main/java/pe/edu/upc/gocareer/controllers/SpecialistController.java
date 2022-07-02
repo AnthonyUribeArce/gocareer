@@ -26,17 +26,18 @@ public class SpecialistController {
 
 	@GetMapping("/nuevo")
 	public String newSpecialist(Model model) {
-		model.addAttribute("sp", new Specialist());
+		model.addAttribute("specialist", new Specialist());
 		return "specialist/frmRegisterSpecialist";
 	}
 
 	@PostMapping("/guardar")
-	public String saveSpecialist(@Valid Specialist spe, BindingResult binRes, Model model) {
+	public String saveSpecialist(@Valid Specialist specialist, BindingResult binRes, Model model) {
 
 		if (binRes.hasErrors()) {
 			return "specialist/frmRegisterSpecialist";
 		} else {
-			speService.insert(spe);
+			model.addAttribute("spe", new Specialist());
+			speService.insert(specialist);
 			model.addAttribute("mensaje", "Se guardo correctamente!!");
 			return "redirect:/especialistas/nuevo";
 		}
