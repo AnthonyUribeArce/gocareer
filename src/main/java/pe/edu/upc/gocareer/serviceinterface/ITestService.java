@@ -1,8 +1,8 @@
-package pe.edu.upc.gocareer.serviceinterface;
+package pe.edu.upc.gocareer.serviceInterface;
 
 import java.util.List;
 
-import pe.edu.upc.gocareer.entities.Test;
+import pe.edu.upc.gocareer.entity.Test;
 
 public interface ITestService {
 	public void insert(Test test);

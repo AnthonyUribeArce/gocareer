@@ -1,9 +1,10 @@
-package pe.edu.upc.gocareer.serviceinterface;
+package pe.edu.upc.gocareer.serviceInterface;
 
 import java.util.List;
 import java.util.Optional;
 
-import pe.edu.upc.gocareer.entities.Specialist;
+import pe.edu.upc.gocareer.entity.Specialist;
+
 
 public interface ISpecialistService {
 	public void insert(Specialist specialist);
